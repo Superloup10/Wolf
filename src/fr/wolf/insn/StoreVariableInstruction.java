@@ -9,14 +9,25 @@
 * http://www.gnu.org/licenses/gpl-3.0.fr.html
 * Contacter l'auteur pour utiliser les sources
 ******************************************************************************/
-package fr.wolf;
+package fr.wolf.insn;
 
-public class WolfException extends Exception
+public class StoreVariableInstruction extends Instruction
 {
-    private static final long serialVersionUID = -1627877037302309397L;
-
-    public WolfException(String message)
+    private int varIndex;
+    
+    public StoreVariableInstruction(int index)
     {
-        super(message);
+        super(OpCodes.VAR_STORE);
+        this.varIndex = index;
+    }
+    
+    public int getVarIndex()
+    {
+        return varIndex;
+    }
+    
+    public String toString()
+    {
+        return super.toString() + " " + varIndex;
     }
 }

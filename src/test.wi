@@ -1,0 +1,12 @@
+import <time>
+import <math>
+
+void out2()
+{
+	out(0);
+}
+
+int main()
+{
+	return out2();
+}

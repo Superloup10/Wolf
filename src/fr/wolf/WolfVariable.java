@@ -11,12 +11,19 @@
 ******************************************************************************/
 package fr.wolf;
 
-public class WolfException extends Exception
+public class WolfVariable extends WolfValue
 {
-    private static final long serialVersionUID = -1627877037302309397L;
-
-    public WolfException(String message)
+    public boolean isGlobal;
+    public boolean isLocal;
+    public String name;
+    public int index;  
+    
+    public WolfVariable(int index, String name, WolfType type, boolean isLocal, boolean isGlobal, Object initialValue)
     {
-        super(message);
+        super(initialValue, type);
+        this.index = index;
+        this.name = name;
+        this.isLocal = isLocal;
+        this.isGlobal = isGlobal;
     }
 }

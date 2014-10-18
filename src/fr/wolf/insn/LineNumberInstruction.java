@@ -9,14 +9,20 @@
 * http://www.gnu.org/licenses/gpl-3.0.fr.html
 * Contacter l'auteur pour utiliser les sources
 ******************************************************************************/
-package fr.wolf;
+package fr.wolf.insn;
 
-public class WolfException extends Exception
+public class LineNumberInstruction extends Instruction
 {
-    private static final long serialVersionUID = -1627877037302309397L;
+    private int line;
 
-    public WolfException(String message)
+    public LineNumberInstruction(int line)
     {
-        super(message);
+        super(OpCodes.LINE_NUMBER);
+        this.line = line;
+    }
+    
+    public int getLine()
+    {
+        return line;
     }
 }

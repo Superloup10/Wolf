@@ -9,14 +9,27 @@
 * http://www.gnu.org/licenses/gpl-3.0.fr.html
 * Contacter l'auteur pour utiliser les sources
 ******************************************************************************/
-package fr.wolf;
+package fr.wolf.insn;
 
-public class WolfException extends Exception
+import fr.wolf.WolfMethod;
+
+public class MethodStartInstruction extends Instruction
 {
-    private static final long serialVersionUID = -1627877037302309397L;
+    private WolfMethod method;
 
-    public WolfException(String message)
+    public MethodStartInstruction(WolfMethod method)
     {
-        super(message);
+        super(OpCodes.METHOD_START);
+        this.method = method;
+    }
+    
+    public WolfMethod getMethod()
+    {
+        return method;
+    }
+    
+    public String toString()
+    {
+        return super.toString() + " " + method.getOwner() + "." + method.getName() + " " + method.getDesc();
     }
 }

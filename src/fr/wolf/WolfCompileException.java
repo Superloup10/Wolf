@@ -11,11 +11,11 @@
 ******************************************************************************/
 package fr.wolf;
 
-public class WolfException extends Exception
+public class WolfCompileException extends WolfException
 {
-    private static final long serialVersionUID = -1627877037302309397L;
+    private static final long serialVersionUID = -4896169710854965105L;
 
-    public WolfException(String message)
+    public WolfCompileException(String message)
     {
         super(message);
     }

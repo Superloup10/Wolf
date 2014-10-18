@@ -11,12 +11,21 @@
 ******************************************************************************/
 package fr.wolf;
 
-public class WolfException extends Exception
+public class WolfValue
 {
-    private static final long serialVersionUID = -1627877037302309397L;
+    public WolfType type;
+    public Object value;
 
-    public WolfException(String message)
+    public WolfValue(Object v, WolfType type)
     {
-        super(message);
+        this.value = v;
+        this.type = type;
+    }
+    
+    public String toString()
+    {
+        if(value == null)
+            return "null";
+        return value.toString();
     }
 }

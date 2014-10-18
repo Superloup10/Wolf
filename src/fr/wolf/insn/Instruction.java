@@ -3,20 +3,30 @@
 *
 * This work is made available under the terms of the GNU GENERAL PUBLIC LICENSE:
 * http://www.gnu.org/licenses/gpl-3.0.en.html
-* Contact the author for use the sources
+* Contact the author for use the source
 *
 * Cette œuvre est mise à disposition selon les termes de la GNU GENERAL PUBLIC LICENSE:
 * http://www.gnu.org/licenses/gpl-3.0.fr.html
 * Contacter l'auteur pour utiliser les sources
 ******************************************************************************/
-package fr.wolf;
+package fr.wolf.insn;
 
-public class WolfException extends Exception
+public abstract class Instruction implements OpCodes
 {
-    private static final long serialVersionUID = -1627877037302309397L;
+    private int opcode;
 
-    public WolfException(String message)
+    public Instruction(int opcode)
     {
-        super(message);
+        this.opcode = opcode;
+    }
+    
+    public String toString()
+    {
+        return OpCodes.toString(opcode);
+    }
+    
+    public int getOpcode()
+    {
+        return opcode;
     }
 }
